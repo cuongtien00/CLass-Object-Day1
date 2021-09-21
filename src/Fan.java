@@ -19,12 +19,22 @@ public class Fan {
 
     @Override
     public String toString() {
-        return "Fan{" +
-                "speed=" + speed +
-                ", on=" + on +
-                ", radius=" + radius +
-                ", color='" + color + '\'' +
-                '}';
+        if(on == true){
+            return "Fan{" +
+                    "speed=" + speed +
+                    ", Fan is on"  +
+                    ", radius=" + radius +
+                    ", color='" + color + '\'' +
+                    '}';
+        }
+        else {
+            return "Fan{" +
+                    "speed=" + speed +
+                    ", Fan is off" +
+                    ", radius=" + radius +
+                    ", color='" + color + '\'' +
+                    '}';
+        }
     }
 
     public int getSLOW() {
