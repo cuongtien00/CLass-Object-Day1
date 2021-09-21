@@ -23,17 +23,17 @@ public class QuadraticEquation {
         return c;
     }
     double getDiscriminant() {
-        return Math.pow(b, 2) - 4 * a * c;
+        return b*b - 4 * a * c;
     }
 
     double getRoot1() {
 
-        return (-b + Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / a * 2;
+        return (-b + Math.sqrt(b*b - 4 * a * c)) / a * 2;
     }
 
     double getRoot2() {
 
-        return (-b - Math.sqrt(Math.pow(b, 2) - 4 * a * c))/ a * 2;
+        return (-b - Math.sqrt(b*b - 4 * a * c))/ a * 2;
     }
     double getRoot(){
 
@@ -53,11 +53,12 @@ public class QuadraticEquation {
         c = scanner.nextDouble();
         QuadraticEquation equation1 = new QuadraticEquation(a, b, c);
         double d = equation1.getDiscriminant();
-        if (d > 0) {
-            System.out.println("Pt co 2 nghiem la " + equation1.getRoot1() + " va " + equation1.getRoot2());
+        if (d < 0) {
+            System.out.println("Pt vo nghiem");
+
         } else if (d == 0) {
             System.out.println("Pt co nghiem kep " + equation1.getRoot());
         } else
-            System.out.println("Pt vo nghiem");
+            System.out.println("Pt co 2 nghiem la " + equation1.getRoot1() + " va " + equation1.getRoot2());
     }
 }
