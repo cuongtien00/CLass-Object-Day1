@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class QuadraticEquation {
     double a;
     double b;
@@ -41,7 +43,15 @@ public class QuadraticEquation {
 
 
     public static void main(String[] args) {
-        QuadraticEquation equation1 = new QuadraticEquation(3, 2, -2 );
+       double a;
+       double b;
+       double c;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Moi ban nhap he so a, b, c");
+        a = scanner.nextDouble();
+        b = scanner.nextDouble();
+        c = scanner.nextDouble();
+        QuadraticEquation equation1 = new QuadraticEquation(a, b, c);
         double d = equation1.getDiscriminant();
         if (d > 0) {
             System.out.println("Pt co 2 nghiem la " + equation1.getRoot1() + " va " + equation1.getRoot2());
